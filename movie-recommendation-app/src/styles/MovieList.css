@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap");
+
+.movie-list {
+  margin-left: 250px;
+  padding: 40px;
+  background-color: #121212;
+}
+
+.movie-list-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.no-favourites-message {
+  font-size: 40px;
+  font-family: "Rubik Glitch", system-ui;
+  font-weight: 100;
+  font-style: normal;
+  color: #ffffff;
+  text-align: center;
+  margin: 40px 0;
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 350px;
+}
+
+.movie-list h3 {
+  font-size: 24px;
+  color: white;
+  margin-bottom: 50px;
+  margin-top: 0;
+}
+
+.movie-list-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.movie-card {
+  background-color: #222;
+  padding: 10px;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+.movie-card img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.movie-info {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+h4 {
+  padding-right: 20px;
+  margin-bottom: 0;
+}
+
+.fav-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.296);
+  border: none;
+  color: white;
+  border-radius: 0 15px 0 10px;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.fav-btn:hover {
+  background-color: #5548c8;
+}
+.controls {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.filter-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 18px;
+}
+
+.filter-options {
+  position: absolute;
+  background-color: #222;
+  padding: 10px;
+  border-radius: 8px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filter-options select {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #222;
+  color: #fff;
+  cursor: pointer;
+}
+
+.filter-options select:focus {
+  outline: none;
+  background-color: #333;
+}
+
+.apply-filter {
+  background-color: #7d73d2;
+  border: none;
+  border-radius: 10px;
+  color: #ffffff;
+  padding: 5px;
+}
+.apply-filter:hover {
+  background-color: #5548c8;
+}
+
+.sort-dropdown,
+.filter-dropdown {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #222;
+  color: #fff;
+  cursor: pointer;
+}
+
+.sort-dropdown:focus,
+.filter-dropdown:focus {
+  outline: none;
+  background-color: #333;
+}
+
+/* MovieList.css */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.pagination button {
+  padding: 10px 15px;
+  margin: 20px 5px;
+  border: none;
+  background-color: #542184;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.pagination button:disabled {
+  background-color: #ebe8f0;
+  color: #3b2455;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  align-self: center;
+  margin: 0 10px;
+  color: #fff;
+}
+
