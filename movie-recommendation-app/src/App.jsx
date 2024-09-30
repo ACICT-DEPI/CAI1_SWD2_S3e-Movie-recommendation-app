@@ -10,7 +10,6 @@ import { getMedia } from "./api";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import "./App.css"
-import Home from "./components/Home/Home";
 const App = () => {
   const [favourites, setFavourites] = useState([]);
   const [watchlist, setWatchlist] = useState([]);
