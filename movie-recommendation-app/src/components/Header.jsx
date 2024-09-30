@@ -36,7 +36,7 @@ const Header = ({
     ? `url(https://image.tmdb.org/t/p/original/${currentMovie.backdrop_path})`
     : "";
 
-  const isHomePage = location.pathname === "/";
+  const isHomePage = location.pathname === "/home";
   const isFavourite =
     currentMovie && favourites.some((fav) => fav.id === currentMovie.id);
 

@@ -10,7 +10,7 @@ const Sidebar = () => {
       </div>
       <nav>
         <ul>
-          <li><Link to="/"><i className="fas fa-home"></i> Home</Link></li>
+          <li><Link to="/home"><i className="fas fa-home"></i> Home</Link></li>
           <li><Link to="/favourites"><i className="fas fa-heart"></i> Favourites</Link></li>
           <li><Link to="/trending"><i className="fas fa-fire"></i> Trending</Link></li>
           <li><Link to="/coming-soon"><i className="fas fa-clock"></i> Coming Soon</Link></li>

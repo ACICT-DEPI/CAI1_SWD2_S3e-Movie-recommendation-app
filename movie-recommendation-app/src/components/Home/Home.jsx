@@ -1,20 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Sidebar from "./components/Sidebar";
-import MovieList from "./components/MovieList";
-import Header from "./components/Header";
-import MovieDetail from "./components/MovieDetail";
-import { getMedia } from "./api";
-import "./App.css";
+import Sidebar from "../Sidebar";
+import MovieList from "../MovieList";
+import Header from "../Header";
+import MovieDetail from "../MovieDetail";
+import { getMedia } from "../../api";
+import "../../App.css";
 
-const App = () => {
+
+
+const Home = () => {
   const [favourites, setFavourites] = useState([]);
   const [watchlist, setWatchlist] = useState([]);
   const [mediaType, setMediaType] = useState("movie");
   const [category, setCategory] = useState("popular");
   const [newestMovies, setNewestMovies] = useState([]);
 
-  const toggleFavourite = (media) => {
+   const toggleFavourite = (media) => {
     setFavourites((prevFavourites) => {
       const isFavourite = prevFavourites.some(
         (favMedia) => favMedia.id === media.id
@@ -25,7 +27,7 @@ const App = () => {
     });
   };
 
-  const toggleWatchlist = (movie) => {
+   const toggleWatchlist = (movie) => {
     setWatchlist((prevWatchlist) => {
       const isInWatchlist = prevWatchlist.some((item) => item.id === movie.id);
       return isInWatchlist
@@ -62,7 +64,6 @@ const App = () => {
   };
 
   return (
-    <Router>
       <div className="app-container">
         <Sidebar />
         <Header
@@ -72,8 +73,10 @@ const App = () => {
           favourites={favourites}
         />
         <Routes>
+       
+			
           <Route
-            path="/"
+            path="/home"
             element={
               <MovieList
                 category={category}
@@ -163,8 +166,8 @@ const App = () => {
           />
         </Routes>
       </div>
-    </Router>
   );
 };
 
-export default App;
+export default Home;
+
