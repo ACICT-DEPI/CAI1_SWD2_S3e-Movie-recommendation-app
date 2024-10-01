@@ -9,7 +9,7 @@ import MovieList from "./components/MovieList";
 import { getMedia } from "./api";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
-import "./App.css"
+import "./App.css";
 const App = () => {
   const [favourites, setFavourites] = useState([]);
   const [watchlist, setWatchlist] = useState([]);
@@ -17,7 +17,7 @@ const App = () => {
   const [category, setCategory] = useState("popular");
   const [newestMovies, setNewestMovies] = useState([]);
 
-   const toggleFavourite = (media) => {
+  const toggleFavourite = (media) => {
     setFavourites((prevFavourites) => {
       const isFavourite = prevFavourites.some(
         (favMedia) => favMedia.id === media.id
@@ -28,7 +28,7 @@ const App = () => {
     });
   };
 
-   const toggleWatchlist = (movie) => {
+  const toggleWatchlist = (movie) => {
     setWatchlist((prevWatchlist) => {
       const isInWatchlist = prevWatchlist.some((item) => item.id === movie.id);
       return isInWatchlist
@@ -66,19 +66,20 @@ const App = () => {
   return (
     <Router>
       <Routes>
-      <Route path="/" element={<Main />} />
-		  <Route path="/login" element={<Login />} />
-		  <Route path="/signup" element={<Signup />} />
+        <Route path="/" element={<Main />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
         <Route
-            path="/home"
-            element={<>
-            <Sidebar />
-        <Header
-          newestMovies={newestMovies}
-          onCategoryChange={handleCategoryChange}
-          toggleFavourite={toggleFavourite}
-          favourites={favourites}
-        />
+          path="/home"
+          element={
+            <>
+              <Sidebar />
+              <Header
+                newestMovies={newestMovies}
+                onCategoryChange={handleCategoryChange}
+                toggleFavourite={toggleFavourite}
+                favourites={favourites}
+              />
               <MovieList
                 category={category}
                 type={mediaType}
@@ -87,20 +88,20 @@ const App = () => {
                 favourites={favourites}
                 watchlist={watchlist}
               />
-              </>
-            }
-          />
-          <Route
-            path="/favourites"
-            element={
-              <>
-            <Sidebar />
-        <Header
-          newestMovies={newestMovies}
-          onCategoryChange={handleCategoryChange}
-          toggleFavourite={toggleFavourite}
-          favourites={favourites}
+            </>
+          }
         />
+        <Route
+          path="/favourites"
+          element={
+            <>
+              <Sidebar />
+              <Header
+                newestMovies={newestMovies}
+                onCategoryChange={handleCategoryChange}
+                toggleFavourite={toggleFavourite}
+                favourites={favourites}
+              />
               <MovieList
                 category="favourites"
                 type="movie"
@@ -109,20 +110,20 @@ const App = () => {
                 favourites={favourites}
                 watchlist={watchlist}
               />
-              </>
-            }
-          />
-          <Route
-            path="/watch-list"
-            element={
-              <>
-            <Sidebar />
-        <Header
-          newestMovies={newestMovies}
-          onCategoryChange={handleCategoryChange}
-          toggleFavourite={toggleFavourite}
-          favourites={favourites}
+            </>
+          }
         />
+        <Route
+          path="/watch-list"
+          element={
+            <>
+              <Sidebar />
+              <Header
+                newestMovies={newestMovies}
+                onCategoryChange={handleCategoryChange}
+                toggleFavourite={toggleFavourite}
+                favourites={favourites}
+              />
               <MovieList
                 category="watch-list"
                 type="movie"
@@ -131,20 +132,20 @@ const App = () => {
                 favourites={favourites}
                 watchlist={watchlist}
               />
-              </>
-            }
-          />
-          <Route
-            path="/coming-soon"
-            element={
-              <>
-            <Sidebar />
-        <Header
-          newestMovies={newestMovies}
-          onCategoryChange={handleCategoryChange}
-          toggleFavourite={toggleFavourite}
-          favourites={favourites}
+            </>
+          }
         />
+        <Route
+          path="/coming-soon"
+          element={
+            <>
+              <Sidebar />
+              <Header
+                newestMovies={newestMovies}
+                onCategoryChange={handleCategoryChange}
+                toggleFavourite={toggleFavourite}
+                favourites={favourites}
+              />
               <MovieList
                 category="coming soon"
                 type="movie"
@@ -153,20 +154,20 @@ const App = () => {
                 favourites={favourites}
                 watchlist={watchlist}
               />
-              </>
-            }
-          />
-          <Route
-            path="/trending"
-            element={
-              <>
-            <Sidebar />
-        <Header
-          newestMovies={newestMovies}
-          onCategoryChange={handleCategoryChange}
-          toggleFavourite={toggleFavourite}
-          favourites={favourites}
+            </>
+          }
         />
+        <Route
+          path="/trending"
+          element={
+            <>
+              <Sidebar />
+              <Header
+                newestMovies={newestMovies}
+                onCategoryChange={handleCategoryChange}
+                toggleFavourite={toggleFavourite}
+                favourites={favourites}
+              />
               <MovieList
                 category="trending"
                 type="movie"
@@ -175,20 +176,20 @@ const App = () => {
                 favourites={favourites}
                 watchlist={watchlist}
               />
-              </>
-            }
-          />
-          <Route
-            path="/movie/:id"
-            element={
-              <>
-            <Sidebar />
-        <Header
-          newestMovies={newestMovies}
-          onCategoryChange={handleCategoryChange}
-          toggleFavourite={toggleFavourite}
-          favourites={favourites}
+            </>
+          }
         />
+        <Route
+          path="/movie/:id"
+          element={
+            <>
+              <Sidebar />
+              <Header
+                newestMovies={newestMovies}
+                onCategoryChange={handleCategoryChange}
+                toggleFavourite={toggleFavourite}
+                favourites={favourites}
+              />
               <MovieDetail
                 movies={newestMovies}
                 toggleFavourite={toggleFavourite}
@@ -196,20 +197,20 @@ const App = () => {
                 favourites={favourites}
                 watchlist={watchlist}
               />
-              </>
-            }
-          />
-          <Route
-            path="/series/:id"
-            element={
-              <>
-            <Sidebar />
-        <Header
-          newestMovies={newestMovies}
-          onCategoryChange={handleCategoryChange}
-          toggleFavourite={toggleFavourite}
-          favourites={favourites}
+            </>
+          }
         />
+        <Route
+          path="/series/:id"
+          element={
+            <>
+              <Sidebar />
+              <Header
+                newestMovies={newestMovies}
+                onCategoryChange={handleCategoryChange}
+                toggleFavourite={toggleFavourite}
+                favourites={favourites}
+              />
               <MovieDetail
                 movies={newestMovies}
                 toggleFavourite={toggleFavourite}
@@ -217,14 +218,41 @@ const App = () => {
                 favourites={favourites}
                 watchlist={watchlist}
               />
-              </>
-            }
-          />
-        </Routes>
-        
+            </>
+          }
+        />
+        <Route
+          path="/settings"
+          element={
+            <>
+              <Sidebar />
+              <Header
+                newestMovies={newestMovies}
+                onCategoryChange={handleCategoryChange}
+                toggleFavourite={toggleFavourite}
+                favourites={favourites}
+              />
+              
+            </>
+          }
+        />
+        <Route
+          path="/social"
+          element={
+            <>
+              <Sidebar />
+              <Header
+                newestMovies={newestMovies}
+                onCategoryChange={handleCategoryChange}
+                toggleFavourite={toggleFavourite}
+                favourites={favourites}
+              />
+            </>
+          }
+        />
+      </Routes>
     </Router>
   );
-
 };
 
 export default App;

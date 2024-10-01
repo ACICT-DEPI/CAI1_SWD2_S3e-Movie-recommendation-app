@@ -103,14 +103,17 @@ const Header = ({
             <ul>
               <li>
                 <Link
-                  to="/"
+                  to="/home"
                   onClick={() => onCategoryChange("movie", "popular")}
                 >
                   Movies
                 </Link>
               </li>
               <li>
-                <Link to="/" onClick={() => onCategoryChange("tv", "popular")}>
+                <Link
+                  to="/home"
+                  onClick={() => onCategoryChange("tv", "popular")}
+                >
                   Series
                 </Link>
               </li>
@@ -182,6 +185,7 @@ const Header = ({
             <i className="fas fa-search"></i>
           </div>
           <i className="fas fa-bell notification-icon"></i>
+
           <i className="fas fa-user-circle profile-icon"></i>
         </div>
       </div>
