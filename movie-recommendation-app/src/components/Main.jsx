@@ -6,15 +6,12 @@ const Main = () => {
       className="min-h-screen bg-cover bg-center flex flex-col justify-center items-center p-4 sm:p-8"
       style={{ backgroundImage: 'url("/Welcome-screen.jpeg")' }}
     >
-      {/* Header Section */}
       <header className="mb-8 text-center">
         <h1 className="text-white text-3xl sm:text-4xl font-bold">🎬 WATCH</h1>
         <p className="text-white text-lg sm:text-xl mt-2">
           Enjoy the newest movies
         </p>
       </header>
-
-      {/* Navigation Buttons */}
 
       <div className="flex flex-col sm:flex-row gap-4">
         <Link to="/login">
