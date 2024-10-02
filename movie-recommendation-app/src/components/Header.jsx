@@ -186,7 +186,9 @@ const Header = ({
           </div>
           <i className="fas fa-bell notification-icon"></i>
 
-          <i className="fas fa-user-circle profile-icon"></i>
+          <Link to="/settings">
+            <i className="fas fa-user-circle profile-icon"></i> 
+          </Link>
         </div>
       </div>
     </header>

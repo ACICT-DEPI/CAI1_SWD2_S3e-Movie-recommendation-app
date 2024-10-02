@@ -51,7 +51,9 @@ const Signup = () => {
 	const addDataToFirestore = async (
 		username,
 		email,
-		password
+		password,
+		watchlist,
+		favourites
 	) => {
 		try {
 			const userDocRef = doc(db, "users", username);

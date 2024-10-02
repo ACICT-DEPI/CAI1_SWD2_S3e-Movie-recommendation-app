@@ -9,7 +9,10 @@ import MovieList from "./components/MovieList";
 import { getMedia } from "./api";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
+import Settings from "./components/Settings";
+import Logout from "./components/Logout";
 import "./App.css";
+
 const App = () => {
   const [favourites, setFavourites] = useState([]);
   const [watchlist, setWatchlist] = useState([]);
@@ -232,7 +235,7 @@ const App = () => {
                 toggleFavourite={toggleFavourite}
                 favourites={favourites}
               />
-              
+              <Settings />
             </>
           }
         />
@@ -247,6 +250,42 @@ const App = () => {
                 toggleFavourite={toggleFavourite}
                 favourites={favourites}
               />
+              <div className=" ml-[340px] mt-24 text-white p-10 flex-row ">
+                <table
+                  className=" bg-zinc-800 rounded-xl w-[65vw] 
+          shadow-md shadow-slate-300  "
+                >
+                  <h2 className="text-3xl mb-10 shadow-md rounded-xl p-4 bg-black shadow-gray-700 ">
+                    Contact US
+                  </h2>
+                  <tr className=" flex flex-col mt-8 ml-8 w-[62vw] break-words text-wrap ">
+                    <td className=" text-3xl mb-5 ">Lojaina Ayman:</td>
+                    <td className=" text-2xl ml-8 mb-8">
+                      lojainaaymanmohamed@gmail.com
+                    </td>
+
+                    <td className=" text-3xl mb-5">Shahd:</td>
+                    <td className=" text-2xl ml-8 mb-9 ">
+                      shahdelsayed@gmail.com
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </>
+          }
+        />
+        <Route
+          path="/logout"
+          element={
+            <>
+              <Sidebar />
+              <Header
+                newestMovies={newestMovies}
+                onCategoryChange={handleCategoryChange}
+                toggleFavourite={toggleFavourite}
+                favourites={favourites}
+              />
+              <Logout />
             </>
           }
         />
